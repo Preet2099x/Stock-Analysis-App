@@ -1,17 +1,20 @@
-import './App.css'
+import './App.scss'
 import LiveChart from './Livechart'
-import Page from './Page'
+import SearchBar from './SearchBar'
+
 
 function App() {
 
   return (
-    <>
-      {/* <h1>
-        Stock Candlestick Chart
-      </h1>
-      <LiveChart symbol={'IBM'} /> */}
-      <Page/>
-    </>
+    <div className='main'>
+      <div className="graph">
+       <LiveChart symbol={'IBM'} />
+      </div>
+      <div className="search">
+        <SearchBar/>
+      </div>
+      
+    </div>
   )
 }
 

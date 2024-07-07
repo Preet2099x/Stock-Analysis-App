@@ -11,6 +11,36 @@ const LiveChart = ({ symbol }) => {
 
     const seriesData = useMemo(() => formatStockData(stockData), [stockData]);
 
+    const options = {
+        ...candleStickOptions,
+        xaxis: {
+            labels: {
+                style: {
+                    colors: '#FFFFFF' // Set x-axis labels to white
+                }
+            },
+            axisBorder: {
+                color: '#FFFFFF' // Set x-axis border to white
+            },
+            axisTicks: {
+                color: '#FFFFFF' // Set x-axis ticks to white
+            }
+        },
+        yaxis: {
+            labels: {
+                style: {
+                    colors: '#FFFFFF' // Set y-axis labels to white
+                }
+            },
+            axisBorder: {
+                color: '#FFFFFF' // Set y-axis border to white
+            },
+            axisTicks: {
+                color: '#FFFFFF' // Set y-axis ticks to white
+            }
+        }
+    };
+
     return (
         <ReactApexChart
             series={[
@@ -18,7 +48,7 @@ const LiveChart = ({ symbol }) => {
                     data: seriesData
                 }
             ]}
-            options={candleStickOptions}
+            options={options}
             type="candlestick"
         />
     );

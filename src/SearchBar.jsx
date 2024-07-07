@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Page.scss';
+import './SearchBar.scss';
 
-function Page() {
+function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredCompanies, setFilteredCompanies] = useState([
     'Apple', 'Microsoft', 'Amazon', 'IBM', 'Tesla', 
@@ -21,28 +21,28 @@ function Page() {
   };
 
   return (
-    <div className='main'>
-      <div className='left'>
-        <div className="graph">Graph</div>
-        <div className="companyInfo">Company Info</div>
-      </div>
 
-      <div className="right">
-        <input
+    <div className="searhBoxContainer">
+       <input
           className='searchBox'
           type="text"
           placeholder='Enter Company Name'
           value={searchTerm}
           onChange={handleSearchChange}
         />
+
         <div className="listContainer">
           {filteredCompanies.map(company => (
-            <button key={company}>{company}</button>
+          <button key={company}>{company}</button>
           ))}
         </div>
-      </div>
     </div>
+
+       
+
+  
+
   );
 }
 
-export default Page;
+export default SearchBar;
