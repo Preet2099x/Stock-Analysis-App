@@ -1,0 +1,19 @@
+
+.main{
+    display: flex;
+    .left{
+        display: flex;
+        flex-direction: column;
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        .searchBox{
+            border-radius:10px ;
+        }
+        .listContainer{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
